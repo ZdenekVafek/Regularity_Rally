@@ -1,0 +1,993 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="adc_assignpoints_category_btn" xml:space="preserve">
+    <value>Assign points</value>
+  </data>
+  <data name="adc_brands_title" xml:space="preserve">
+    <value>Brand</value>
+  </data>
+  <data name="adc_cancel_category_btn_" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="adc_cancel_com_btn_" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="adc_cat_title" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="adc_coef_cut_points_racerscategory_label" xml:space="preserve">
+    <value>Coefficient</value>
+  </data>
+  <data name="adc_delete_category_btn" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="adc_min_racerscategory_label" xml:space="preserve">
+    <value>Limit</value>
+  </data>
+  <data name="adc_name_category_label" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="adc_place_category_label" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="adc_points_category_label" xml:space="preserve">
+    <value>Points</value>
+  </data>
+  <data name="adc_save_category_btn" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="ancar_cancel_car_btn_" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ancar_car_title" xml:space="preserve">
+    <value>Add car</value>
+  </data>
+  <data name="ancar_delete_car_btn_" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="ancar_delete_team_btn_" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="ancar_email_team_label_" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="ancar_model_car_label_" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="ancar_name_car_label_" xml:space="preserve">
+    <value>Brand</value>
+  </data>
+  <data name="ancar_name_team_label_" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ancar_save_car_btn_" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="ancar_save_team_btn_" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="ancar_short_team_label_" xml:space="preserve">
+    <value>Short name</value>
+  </data>
+  <data name="ancar_team_title" xml:space="preserve">
+    <value>Team</value>
+  </data>
+  <data name="ancar_vin_car_label_" xml:space="preserve">
+    <value>VIN</value>
+  </data>
+  <data name="ancar_year_car_label_" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="anm_Address_com_label_" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="anm_delete_com_btn" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="anm_email_com_label" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="anm_name_com_label" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="anm_save_com_btn" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="anm_tel_com_label_" xml:space="preserve">
+    <value>Telephone</value>
+  </data>
+  <data name="anm_web_com_label" xml:space="preserve">
+    <value>Web</value>
+  </data>
+  <data name="car_addcar_btn_" xml:space="preserve">
+    <value>New car</value>
+  </data>
+  <data name="car_brandcar_head" xml:space="preserve">
+    <value>Brand</value>
+  </data>
+  <data name="car_closecar_btn_" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="car_closecat_btn_" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="car_model_head" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="car_vin_head" xml:space="preserve">
+    <value>VIN</value>
+  </data>
+  <data name="car_year_head" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="category_addcat_btn_" xml:space="preserve">
+    <value>Add category</value>
+  </data>
+  <data name="category_coefcategory_head" xml:space="preserve">
+    <value>Coefficient</value>
+  </data>
+  <data name="category_limitcategory_head" xml:space="preserve">
+    <value>Limit</value>
+  </data>
+  <data name="category_namecategory_head" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="category_points_head" xml:space="preserve">
+    <value>Points</value>
+  </data>
+  <data name="category_positionpoints_head" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="measurerbrand_addbrand_btn_" xml:space="preserve">
+    <value>New brand</value>
+  </data>
+  <data name="measurerbrand_Address_head" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="measurerbrand_brand_head" xml:space="preserve">
+    <value>Brand</value>
+  </data>
+  <data name="measurerbrand_closebrand_btn_" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="measurerbrand_Email_head" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="measurerbrand_Telephone_head" xml:space="preserve">
+    <value>Telephone</value>
+  </data>
+  <data name="measurerbrand_Web_head" xml:space="preserve">
+    <value>Web</value>
+  </data>
+  <data name="racer_addracers_btn_" xml:space="preserve">
+    <value>Add racer</value>
+  </data>
+  <data name="racer_AddressRacer_head" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="racer_BornRacer_head" xml:space="preserve">
+    <value>Born</value>
+  </data>
+  <data name="racer_cancel_racer_btn_" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="racer_closeracers_btn_" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="racer_delete_racer_btn_" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="racer_First_nameRacer_head" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="racer_GenderRacer_head" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="racer_Last_nameRacer_head" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="racer_MailRacer_head" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="racer_NationalityRacer_head" xml:space="preserve">
+    <value>Nationality</value>
+  </data>
+  <data name="racer_save_racer_btn_" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="racer_Short_nameRacer_head" xml:space="preserve">
+    <value>Short name</value>
+  </data>
+  <data name="racer_TeamRacer_head" xml:space="preserve">
+    <value>Team</value>
+  </data>
+  <data name="racer_TelRacer_head" xml:space="preserve">
+    <value>Telephone</value>
+  </data>
+  <data name="team_addteam_btn_" xml:space="preserve">
+    <value>Add team</value>
+  </data>
+  <data name="team_closeteam_btn_" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="team_email_head" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="team_shortname_head" xml:space="preserve">
+    <value>Short name</value>
+  </data>
+  <data name="team_teamname_head" xml:space="preserve">
+    <value>Team</value>
+  </data>
+  <data name="user_active_head" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="user_adduser_btn_" xml:space="preserve">
+    <value>Add user</value>
+  </data>
+  <data name="user_closeuser_btn_" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="user_email_head" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="user_lastname_head" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="user_login_head" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="user_name_head" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="user_newpass_user_label" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="user_role_head" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="user_save_user_btn" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="user_active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="lw_connectdbs_btn" xml:space="preserve">
+    <value>Connect to database</value>
+  </data>
+  <data name="lw_login_btn" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="lw_login_label" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="lw_password_label" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="pw_connectdbs_btn_" xml:space="preserve">
+    <value>Connect to database</value>
+  </data>
+  <data name="pw_connectdbs_label_" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="pw_keep_label_" xml:space="preserve">
+    <value>Remember</value>
+  </data>
+  <data name="pw_password_label_" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="pw_port_label_" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="pw_serverdb_label_" xml:space="preserve">
+    <value>Database name</value>
+  </data>
+  <data name="pw_user_label_" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="anr_cancel_race_btn_" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="anr_date_race_label" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="anr_delete_race_btn_" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="anr_length_race_label" xml:space="preserve">
+    <value>Length</value>
+  </data>
+  <data name="anr_location_race_label" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="anr_meascom_race_label" xml:space="preserve">
+    <value>Measure company</value>
+  </data>
+  <data name="anr_name_race_label" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="anr_race_title" xml:space="preserve">
+    <value>Race</value>
+  </data>
+  <data name="anr_save_race_btn_" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="anr_state_race_label" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="mwi_Date_head" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="mwi_Length_head" xml:space="preserve">
+    <value>Legth</value>
+  </data>
+  <data name="mwi_Mdate_head" xml:space="preserve">
+    <value>mDate</value>
+  </data>
+  <data name="mwi_Meas_head" xml:space="preserve">
+    <value>Measure brand</value>
+  </data>
+  <data name="mwi_Place_head" xml:space="preserve">
+    <value>Place</value>
+  </data>
+  <data name="mwi_Status_head" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="mwi_Title_head" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="mwrs_Add_lbl" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="mwrs_add_new_btn" xml:space="preserve">
+    <value>Add new race</value>
+  </data>
+  <data name="mwrs_cancel_lbl" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="mwrs_Car" xml:space="preserve">
+    <value>Car</value>
+  </data>
+  <data name="mwrs_cat_lbl" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="mwrs_chooserace_label_" xml:space="preserve">
+    <value>Choose race</value>
+  </data>
+  <data name="mwrs_length_lbl" xml:space="preserve">
+    <value>Length</value>
+  </data>
+  <data name="mwrs_nameofrace_lbl" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="mwrs_name_racer_lbl" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="mwrs_name_team_lbl" xml:space="preserve">
+    <value>Team</value>
+  </data>
+  <data name="mwrs_name_timekeep_lbl" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="mwrs_numofracers_lbl" xml:space="preserve">
+    <value>Num. of racers</value>
+  </data>
+  <data name="mwrs_place_lbl" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="mwrs_place_timekeep_lbl" xml:space="preserve">
+    <value>Place</value>
+  </data>
+  <data name="mwrs_Position" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="mwrs_print" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="mwrs_racer" xml:space="preserve">
+    <value>Racer</value>
+  </data>
+  <data name="mwrs_racers_lbl" xml:space="preserve">
+    <value>Racers</value>
+  </data>
+  <data name="mwrs_Remove_lbl" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="mwrs_save_lbl" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="mwrs_setrace_btn" xml:space="preserve">
+    <value>Set</value>
+  </data>
+  <data name="mwrs_StartNumber" xml:space="preserve">
+    <value>Start num.</value>
+  </data>
+  <data name="mwrs_state_lbl" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="mwrs_timekeepers_lbl" xml:space="preserve">
+    <value>Timekeepers</value>
+  </data>
+  <data name="mwrs_title_label" xml:space="preserve">
+    <value>Races</value>
+  </data>
+  <data name="mwrs_trackcomis_lbl" xml:space="preserve">
+    <value>Track comissar</value>
+  </data>
+  <data name="mwrs_user" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="mwi_AddRace_" xml:space="preserve">
+    <value>Add new</value>
+  </data>
+  <data name="mwi_CloseRace_" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="t_addTour_" xml:space="preserve">
+    <value>Add new</value>
+  </data>
+  <data name="t_Category_head" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="t_closeTour_" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="t_Name_head" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="t_NumOfRacers_head" xml:space="preserve">
+    <value>Num. of racers</value>
+  </data>
+  <data name="t_NumOfRaces_head" xml:space="preserve">
+    <value>Num. of racers</value>
+  </data>
+  <data name="t_ShortName_head" xml:space="preserve">
+    <value>Short name</value>
+  </data>
+  <data name="t_Year_head" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="anr_add_racer_btn_" xml:space="preserve">
+    <value>Add racer</value>
+  </data>
+  <data name="anr_delete_racer_btn_" xml:space="preserve">
+    <value>Remove racer</value>
+  </data>
+  <data name="anr_name_racer_header" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="anr_start_num_header" xml:space="preserve">
+    <value>#</value>
+  </data>
+  <data name="anr_team_racer_header" xml:space="preserve">
+    <value>Team</value>
+  </data>
+  <data name="mwts_addnewrace_lbl_" xml:space="preserve">
+    <value>Add race</value>
+  </data>
+  <data name="mwts_add_lbl_" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="mwts_add_new_btn" xml:space="preserve">
+    <value>Add new tournament</value>
+  </data>
+  <data name="mwts_add_race_btn_" xml:space="preserve">
+    <value>Add race</value>
+  </data>
+  <data name="mwts_cancel_lbl" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="mwts_cancel_lbl_" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="mwts_cattour_lbl_" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="mwts_choosetour_btn_" xml:space="preserve">
+    <value>Set</value>
+  </data>
+  <data name="mwts_choosetour_lbl_" xml:space="preserve">
+    <value>Choose tour</value>
+  </data>
+  <data name="mwts_datetour_header" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="mwts_date_race_lbl" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="mwts_delete_lbl_" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="mwts_delete_race_btn_" xml:space="preserve">
+    <value>Remove race</value>
+  </data>
+  <data name="mwts_lenghttour_header" xml:space="preserve">
+    <value>Lenght</value>
+  </data>
+  <data name="mwts_nameracer_tour_lbl" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="mwts_nametour_header" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="mwts_nametour_lbl_" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="mwts_name_race_lbl" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="mwts_numofracerstour_lbl_" xml:space="preserve">
+    <value>Num. of racers</value>
+  </data>
+  <data name="mwts_numofracestour_lbl_" xml:space="preserve">
+    <value>Num. od races</value>
+  </data>
+  <data name="mwts_placetour_header" xml:space="preserve">
+    <value>Place</value>
+  </data>
+  <data name="mwts_place_race_lbl" xml:space="preserve">
+    <value>Place</value>
+  </data>
+  <data name="mwts_pos_tour_lbl" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="mwts_racerpostour_lbl_" xml:space="preserve">
+    <value>Racers position</value>
+  </data>
+  <data name="mwts_racestour_lbl_" xml:space="preserve">
+    <value>Races</value>
+  </data>
+  <data name="mwts_races_lbl_" xml:space="preserve">
+    <value>Races</value>
+  </data>
+  <data name="mwts_race_num_info_lbl" xml:space="preserve">
+    <value>Race Num.</value>
+  </data>
+  <data name="mwts_race__info_lbl" xml:space="preserve">
+    <value>Race</value>
+  </data>
+  <data name="mwts_remove_lbl_" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="mwts_save_lbl_" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="mwts_score_tour_lbl" xml:space="preserve">
+    <value>Score</value>
+  </data>
+  <data name="mwts_settour_lbl_" xml:space="preserve">
+    <value>Set tournament</value>
+  </data>
+  <data name="mwts_shortname_lbl_" xml:space="preserve">
+    <value>Short name</value>
+  </data>
+  <data name="mwts_state_race_lbl" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="mwts_team_tour_lbl" xml:space="preserve">
+    <value>Team</value>
+  </data>
+  <data name="mwts_title_label" xml:space="preserve">
+    <value>Tournaments</value>
+  </data>
+  <data name="mwts_yeartour_lbl_" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="mwrs_car_RacerInRace" xml:space="preserve">
+    <value>Car</value>
+  </data>
+  <data name="mwrs_finaltime_RacerInRace" xml:space="preserve">
+    <value>Final time</value>
+  </data>
+  <data name="mwrs_pentime_RacerInRace" xml:space="preserve">
+    <value>Penalization</value>
+  </data>
+  <data name="mwrs_pos_RacerInRace" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="mwrs_time_RacerInRace" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="racer_add_timekeeper_btn_" xml:space="preserve">
+    <value>Add timekeeper</value>
+  </data>
+  <data name="racer_CompanynameTimekeeper_head" xml:space="preserve">
+    <value>Brand</value>
+  </data>
+  <data name="racer_delete_timekeeper_btn_" xml:space="preserve">
+    <value>Remove timekeeper</value>
+  </data>
+  <data name="racer_First_nameTimekeeper_head" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="racer_Last_nameTimekeeper_head" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="race_Position_label_" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="TK_AddRecord_btn" xml:space="preserve">
+    <value>Add record</value>
+  </data>
+  <data name="TK_FinalTimeKeeping_label_" xml:space="preserve">
+    <value>Final time</value>
+  </data>
+  <data name="TK_LapKeeping_header" xml:space="preserve">
+    <value>Lap</value>
+  </data>
+  <data name="TK_NoteKeeping_label_" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="TK_PenalizationKeeping_label_" xml:space="preserve">
+    <value>Penalization</value>
+  </data>
+  <data name="TK_Positionkeeper_header" xml:space="preserve">
+    <value>Keeping station</value>
+  </data>
+  <data name="TK_TimeKeeper_header" xml:space="preserve">
+    <value>Timekeeper</value>
+  </data>
+  <data name="TK_TimeKeeping_label_" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="mwi_choose_race_btn_" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="mwi_referencetime_lbl" xml:space="preserve">
+    <value>Reference time</value>
+  </data>
+  <data name="car_car_title" xml:space="preserve">
+    <value>Cars</value>
+  </data>
+  <data name="cat_cat_title" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="measurerbrand_meas_title" xml:space="preserve">
+    <value>Measurer brands</value>
+  </data>
+  <data name="mwi_racers_lbl" xml:space="preserve">
+    <value>Racers</value>
+  </data>
+  <data name="mwi_race_title" xml:space="preserve">
+    <value>Races</value>
+  </data>
+  <data name="mwts_tour_title" xml:space="preserve">
+    <value>Tournament</value>
+  </data>
+  <data name="racer_racers_title" xml:space="preserve">
+    <value>Racers</value>
+  </data>
+  <data name="racer_Racer_Title" xml:space="preserve">
+    <value>Racer</value>
+  </data>
+  <data name="race_Addrace_title" xml:space="preserve">
+    <value>Race</value>
+  </data>
+  <data name="team_teams_title" xml:space="preserve">
+    <value>Teams</value>
+  </data>
+  <data name="TK_timekeeping_title" xml:space="preserve">
+    <value>Time keeping</value>
+  </data>
+  <data name="t_tournaments_title" xml:space="preserve">
+    <value>Tournaments</value>
+  </data>
+  <data name="user_users_title" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="user_user_title" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="race_LoginTimekeeper_head" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="race_RoleTimekeeper_head" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="race_name_timekeep_lbl" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="race_place_timekeep_lbl" xml:space="preserve">
+    <value>Place</value>
+  </data>
+  <data name="race_timekeepers_lbl" xml:space="preserve">
+    <value>Time keepers</value>
+  </data>
+  <data name="race_CarSelectRacer_label_" xml:space="preserve">
+    <value>Car</value>
+  </data>
+  <data name="race_RefTimeSelectRacer_label_" xml:space="preserve">
+    <value>Reference time</value>
+  </data>
+  <data name="race_StatusSelectRacer_label_" xml:space="preserve">
+    <value>Racer status</value>
+  </data>
+  <data name="mwi_Timekeeping_btn" xml:space="preserve">
+    <value>Time keeping</value>
+  </data>
+  <data name="TK_Car_label_" xml:space="preserve">
+    <value>Car</value>
+  </data>
+  <data name="TK_Fullname_header" xml:space="preserve">
+    <value>Racer</value>
+  </data>
+  <data name="TC_Racer_label_" xml:space="preserve">
+    <value>Racer</value>
+  </data>
+  <data name="TC_timecollection" xml:space="preserve">
+    <value>Time Collection</value>
+  </data>
+  <data name="race_cat_race_label_" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="race_note_race_label_" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="mwts_cat_race_label_" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="mwts_numoflapstour_header" xml:space="preserve">
+    <value>Laps</value>
+  </data>
+  <data name="mwts_timetour_header" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="adc_catPoints_title" xml:space="preserve">
+    <value>Points</value>
+  </data>
+  <data name="adc_CountOfPosition_racerscategory_label_" xml:space="preserve">
+    <value>Scoring positions</value>
+  </data>
+  <data name="autb_users_title" xml:space="preserve">
+    <value>Select user to brand</value>
+  </data>
+  <data name="user_AddUserToBrand" xml:space="preserve">
+    <value>Add user to brand</value>
+  </data>
+  <data name="user_RemUserToBrand" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="race_laps_race_label__" xml:space="preserve">
+    <value>Laps</value>
+  </data>
+  <data name="race_time_race_label_" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="DF_Device_connection" xml:space="preserve">
+    <value>Device connection</value>
+  </data>
+  <data name="DF_Status_label" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="hs_Events_MenuItemHeader" xml:space="preserve">
+    <value>Events</value>
+  </data>
+  <data name="hs_Events_Races_MenuItemHeader" xml:space="preserve">
+    <value>Races</value>
+  </data>
+  <data name="hs_Events_Tournaments_MenuItemHeader" xml:space="preserve">
+    <value>Tournaments</value>
+  </data>
+  <data name="hs_Items_Cars_MenuItemHeader" xml:space="preserve">
+    <value>Cars</value>
+  </data>
+  <data name="hs_Items_Category_MenuItemHeader" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="hs_Items_MenuItemHeader" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="hs_Items_Racers_MenuItemHeader" xml:space="preserve">
+    <value>Racers</value>
+  </data>
+  <data name="hs_Items_Races_MenuItemHeader" xml:space="preserve">
+    <value>Races</value>
+  </data>
+  <data name="hs_Items_Teams_MenuItemHeader" xml:space="preserve">
+    <value>Teams</value>
+  </data>
+  <data name="hs_Items_Tournaments_MenuItemHeader" xml:space="preserve">
+    <value>Tournaments</value>
+  </data>
+  <data name="hs_Items_Users_MenuItemHeader" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="hs_Items__Measurerbrands_MenuItemHeader" xml:space="preserve">
+    <value>Measurer brands</value>
+  </data>
+  <data name="hs_LapsOfRace_label_" xml:space="preserve">
+    <value>Laps</value>
+  </data>
+  <data name="hs_Logout_MenuItemHeader" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="hs_Settings_Device_MenuItemHeader" xml:space="preserve">
+    <value>Device</value>
+  </data>
+  <data name="hs_Settings_Language_MenuItemHeader" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="hs_Settings_MenuItemHeader" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="TK_LapKeeping_label_" xml:space="preserve">
+    <value>Lap</value>
+  </data>
+  <data name="RepMW_Events_Races_MenuItemHeader" xml:space="preserve">
+    <value>Select race</value>
+  </data>
+  <data name="hs_Add_ons_MenuItemHeader" xml:space="preserve">
+    <value>Add-ons</value>
+  </data>
+  <data name="hs_Add_ons_Paddock_MenuItemHeader" xml:space="preserve">
+    <value>Paddock</value>
+  </data>
+  <data name="hs_Add_ons_Reporter_MenuItemHeader" xml:space="preserve">
+    <value>Reporter</value>
+  </data>
+  <data name="TK_choose_race_btn_" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="TK_detail_racer_btn_" xml:space="preserve">
+    <value>Racer detail</value>
+  </data>
+  <data name="TK_detail_tour_btn_" xml:space="preserve">
+    <value>Tournament detail</value>
+  </data>
+  <data name="mwi_AddNote_btn_" xml:space="preserve">
+    <value>Add note</value>
+  </data>
+  <data name="mwi_Born_nameRacer_head" xml:space="preserve">
+    <value>Born</value>
+  </data>
+  <data name="mwi_Car_nameRacer_head" xml:space="preserve">
+    <value>Car</value>
+  </data>
+  <data name="mwi_name_nameRacer_head" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="mwi_Nationality_nameRacer_head" xml:space="preserve">
+    <value>Nationality</value>
+  </data>
+  <data name="mwi_note_racerdetail_head" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="mwi_Reftime_nameRacer_head" xml:space="preserve">
+    <value>Reference time</value>
+  </data>
+  <data name="mwi_Team_nameRacer_head" xml:space="preserve">
+    <value>Team</value>
+  </data>
+  <data name="TK_SelectAll_label_" xml:space="preserve">
+    <value>Select all racers</value>
+  </data>
+  <data name="TK_Paddock_Title" xml:space="preserve">
+    <value>Paddock</value>
+  </data>
+  <data name="TK_Rep_Title" xml:space="preserve">
+    <value>Reporter</value>
+  </data>
+  <data name="DF_Table_connection" xml:space="preserve">
+    <value>Score board connection</value>
+  </data>
+  <data name="print_btn_" xml:space="preserve">
+    <value>Print</value>
+  </data>
+</root>

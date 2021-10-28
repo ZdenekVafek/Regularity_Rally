@@ -1,0 +1,512 @@
+﻿<UserControl x:Class="Regularity_Rally.Control.Homescreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Regularity_Rally.Control"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="1200">
+    <UserControl.Resources>
+        <local:Homescreen_Language x:Key="lang" />
+        <SolidColorBrush x:Key="WindowBackground" Color="#535353" />
+        <SolidColorBrush x:Key="MenuHighlightedBackground" Color="#333333" />
+        <SolidColorBrush x:Key="MenuItemHighlightedBackground" Color="#151515" />
+        <SolidColorBrush x:Key="WindowForeground" Color="White" />
+        <Style x:Key="DescLabel" TargetType="{x:Type Label}">
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="FontFamily" Value="/Regularity_Rally;component/Resources/#Noto Sans Med" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Label}">
+                        <Border CornerRadius="5,0,0,5" BorderThickness="1,1,0,1" BorderBrush="White">
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Text="{TemplateBinding Content}" Margin="0, 0, 5, 0"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="DescValue" TargetType="{x:Type TextBox}">
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="FontFamily" Value="/Regularity_Rally;component/Resources/#Noto Sans Med" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Background" Value="#AAA" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBoxBase}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="White" BorderThickness="1" CornerRadius="0,5,5,0" >
+                            <Grid VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0">
+                                <ScrollViewer x:Name="PART_ContentHost"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="#FF007ACC" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Cursor" Value="Hand" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="DescValueDeath" TargetType="{x:Type TextBox}">
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="FontFamily" Value="/Regularity_Rally;component/Resources/#Noto Sans Med" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Background" Value="{DynamicResource WindowBackground}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBoxBase}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="White" BorderThickness="1" CornerRadius="0,5,5,0" >
+                            <Grid VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0">
+                                <ScrollViewer x:Name="PART_ContentHost"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="#FF007ACC" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Cursor" Value="Hand" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="Submit" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#FF007ACC"/>
+            <Setter Property="BorderBrush" Value="#FF007ACC"/>
+            <Setter Property="BorderThickness" Value="1px" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontFamily" Value="/Regularity_Rally;component/Resources/#Noto Sans Med" />
+            <Setter Property="FontWeight" Value="Normal" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="5" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Cursor" Value="Hand" />
+                                <Setter Property="Background" Value="#FF3091D3"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="BorderBrush" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" Value="#FF005187"/>
+                                <Setter Property="Foreground" Value="#FF8D8D74" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="MenuReg" TargetType="{x:Type Menu}">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Background" Value="{DynamicResource WindowBackground}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Menu}">
+                        <Border>
+                            <DockPanel ClipToBounds="True" HorizontalAlignment="Stretch" IsItemsHost="True" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="MenuItemReg" TargetType="{x:Type MenuItem}">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Background" Value="{DynamicResource WindowBackground}" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type MenuItem}">
+                        <Grid>
+                            <TextBlock x:Name="TopHeaderText" Foreground="{DynamicResource WindowForeground}" TextWrapping="WrapWithOverflow">
+                                <ContentPresenter Margin="6,3,6,3" ContentSource="Header" RecognizesAccessKey="True" />
+                            </TextBlock>
+                            <Popup x:Name="Popup" Placement="Bottom" IsOpen="{TemplateBinding IsSubmenuOpen}" AllowsTransparency="True" Focusable="False" PopupAnimation="Fade">
+                                <Border BorderThickness="0,0,5,5" BorderBrush="{x:Null}">
+                                    <Border.Effect>
+                                        <DropShadowEffect BlurRadius="4" Direction="-60" ShadowDepth="2" Opacity=".65" Color="#111"/>
+                                    </Border.Effect>
+                                    <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Disabled">
+                                        <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Cycle" />
+                                    </ScrollViewer>
+                                </Border>
+                            </Popup>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsHighlighted" Value="true">
+                                <Setter Property="Background" Value="{DynamicResource MenuHighlightedBackground}" TargetName="TopHeaderText" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="MenuItemChek" TargetType="{x:Type MenuItem}">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type MenuItem}">
+                        <Grid x:Name="BlockHolder" Background="{DynamicResource MenuHighlightedBackground}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="19"/>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid Margin="6,0">
+                                <Canvas Width="8" Height="8" x:Name="CheckMark" Visibility="Hidden">
+                                    <Path Width="8" Height="8" Stretch="Fill" Fill="{DynamicResource WindowForeground}" Data="F1 M 4.680,25.878 C 6.728,23.981 8.651,22.200 10.742,20.264 C 14.070,23.809 17.550,27.517 21.411,31.631 C 28.201,22.722 34.577,14.357 41.098,5.800 C 42.941,7.208 44.632,8.498 46.549,9.962 C 38.426,20.667 30.382,31.269 22.065,42.229 C 16.188,36.701 10.449,31.303 4.680,25.878 Z" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                                </Canvas>
+                            </Grid>
+                            <TextBlock Grid.Column="1" x:Name="TopHeaderText" Foreground="{DynamicResource WindowForeground}" TextWrapping="WrapWithOverflow">
+                                <ContentPresenter Margin="6,3,6,3" ContentSource="Header" RecognizesAccessKey="True" />
+                            </TextBlock>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsHighlighted" Value="true">
+                                <Setter Property="Background" Value="{DynamicResource MenuItemHighlightedBackground}" TargetName="BlockHolder" />
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="true">
+                                <Setter TargetName="CheckMark" Property="Visibility" Value="Visible" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="MenuItemSub" TargetType="{x:Type MenuItem}">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Background" Value="{StaticResource MenuHighlightedBackground}" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type MenuItem}">
+                        <Grid Background="{DynamicResource MenuHighlightedBackground}" x:Name="HolderBlock">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="13" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock x:Name="TopHeaderText" Grid.Column="0" Foreground="{DynamicResource WindowForeground}" TextWrapping="WrapWithOverflow">
+                                <ContentPresenter Margin="6,3,6,3" ContentSource="Header" RecognizesAccessKey="True" />
+                            </TextBlock>
+                            <Path Grid.Column="1" HorizontalAlignment="Center" Fill="{DynamicResource WindowForeground}" VerticalAlignment="Center" Data="M 0 0 L 0 7 L 4 3.5 Z" />
+                            <Popup x:Name="Popup" Placement="Right" IsOpen="{TemplateBinding IsSubmenuOpen}" AllowsTransparency="True" Focusable="False" PopupAnimation="Fade">
+                                <Border BorderThickness="0,0,5,5" BorderBrush="{x:Null}">
+                                    <Border.Effect>
+                                        <DropShadowEffect BlurRadius="4" Direction="-60" ShadowDepth="2" Opacity=".65" Color="#111"/>
+                                    </Border.Effect>
+                                    <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Disabled">
+                                        <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Cycle" />
+                                    </ScrollViewer>
+                                </Border>
+                            </Popup>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsHighlighted" Value="true">
+                                <Setter Property="Background" Value="{DynamicResource MenuItemHighlightedBackground}" TargetName="HolderBlock" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="MenuItemPopReg" TargetType="{x:Type MenuItem}">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type MenuItem}">
+                        <Grid x:Name="PrimBlock" Background="{DynamicResource MenuHighlightedBackground}">
+                            <TextBlock x:Name="HeaderText" Foreground="{DynamicResource WindowForeground}" TextWrapping="WrapWithOverflow" Margin="15,5,15,5">
+                                <ContentPresenter RecognizesAccessKey="True" ContentSource="Header"/>
+                            </TextBlock>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsHighlighted" Value="true">
+                                <Setter Property="Background" Value="{DynamicResource MenuItemHighlightedBackground}" TargetName="PrimBlock"/>
+                                <Setter Property="Cursor" Value="Hand"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="{x:Type ListViewItem}">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid Background="#535353">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="23" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <!-- menu container -->
+        <StackPanel Orientation="Vertical">
+            <Menu Style="{StaticResource MenuReg}">
+                <MenuItem Header="{Binding Source={StaticResource lang}, Path=Events_MenuItemHeader}" Style="{StaticResource MenuItemReg}">
+                    <MenuItem Header="{Binding Source={StaticResource lang}, Path=Events_Races_MenuItemHeader}" Style="{StaticResource MenuItemPopReg}" Click="Races_Menu_Click"/>
+                    <MenuItem Header="{Binding Source={StaticResource lang}, Path=Events_Tournaments_MenuItemHeader}" Style="{StaticResource MenuItemPopReg}" Click="Tournaments_Menu_Click"/>
+                </MenuItem>
+                <MenuItem Header="{Binding Source={StaticResource lang}, Path=Items_MenuItemHeader}" Style="{StaticResource MenuItemReg}">
+                    <MenuItem Header="{Binding Source={StaticResource lang}, Path=Items_Cars_MenuItemHeader}" Style="{StaticResource MenuItemPopReg}" Click="Cars_Menu_Click"/>
+                    <MenuItem Header="{Binding Source={StaticResource lang}, Path=Items_Category_MenuItemHeader}" Style="{StaticResource MenuItemPopReg}" Click="Category_Menu_Click"/>
+                    <MenuItem Header="{Binding Source={StaticResource lang}, Path=Items__Measurerbrands_MenuItemHeader}" Style="{StaticResource MenuItemPopReg}" Click="Brands_Menu_Click"/>
+                    <MenuItem Header="{Binding Source={StaticResource lang}, Path=Items_Racers_MenuItemHeader}" Style="{StaticResource MenuItemPopReg}" Click="Racer_Menu_Click"/>
+                    <MenuItem Header="{Binding Source={StaticResource lang}, Path=Items_Races_MenuItemHeader}" Style="{StaticResource MenuItemPopReg}" Click="RacesItems_Menu_Click"/>
+                    <MenuItem Header="{Binding Source={StaticResource lang}, Path=Items_Teams_MenuItemHeader}" Style="{StaticResource MenuItemPopReg}" Click="Team_Menu_Click"/>
+                    <MenuItem Header="{Binding Source={StaticResource lang}, Path=Items_Tournaments_MenuItemHeader}" Style="{StaticResource MenuItemPopReg}" Click="Tournament_Item_Click"/>
+                    <MenuItem x:Name="UserMenuItem"  Header="{Binding Source={StaticResource lang}, Path=Items_Users_MenuItemHeader}" Style="{StaticResource MenuItemPopReg}" Click="User_Menu_Click"/>
+                </MenuItem>
+                <MenuItem Header="{Binding Source={StaticResource lang}, Path=Settings_MenuItemHeader}" Style="{StaticResource MenuItemReg}">
+                    <!--<MenuItem Header="_Database" Style="{StaticResource MenuItemPopReg}"/> -->
+                    <MenuItem Header="{Binding Source={StaticResource lang}, Path=Settings_Device_MenuItemHeader}" Style="{StaticResource MenuItemPopReg}" Click="DeviceForm_Click"/>
+                    <MenuItem Header="{Binding Source={StaticResource lang}, Path=Settings_Language_MenuItemHeader}" Style="{StaticResource MenuItemSub}">
+                        <MenuItem x:Name="LangCZ" Header="CS" IsCheckable="True" Style="{StaticResource MenuItemChek}" Click="LangCZ_Click"/>
+                        <MenuItem x:Name="LangEN" Header="EN" IsCheckable="True" Style="{StaticResource MenuItemChek}" Click="LangEN_Click"/>
+                        <MenuItem x:Name="LangDE" Header="DE" IsCheckable="True" Style="{StaticResource MenuItemChek}" Click="LangDE_Click"/>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="{Binding Source={StaticResource lang}, Path=Add_ons_MenuItemHeader}" Style="{StaticResource MenuItemReg}">
+                    <MenuItem Header="{Binding Source={StaticResource lang}, Path=Add_ons_Reporter_MenuItemHeader}" Style="{StaticResource MenuItemPopReg}" Click="Reporter_MenuItem_Click"/>
+                    <MenuItem Header="{Binding Source={StaticResource lang}, Path=Add_ons_Paddock_MenuItemHeader}" Style="{StaticResource MenuItemPopReg}" Click="Paddock_MenuItem_Click"/>
+                </MenuItem>
+                <!--<MenuItem  Header="_Print" Style="{StaticResource MenuItemReg}">
+
+                </MenuItem>-->
+                <MenuItem Header="{Binding Source={StaticResource lang}, Path=Logout_MenuItemHeader}" x:Name="LogOut" Style="{StaticResource MenuItemReg}" HorizontalAlignment="Right" Click="LogOut_Click">
+                </MenuItem>
+            </Menu>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid x:Name="RaceSelector" Visibility="Hidden">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="500" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="38"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <ListView Background="#FF555555" x:Name="RaceList" Grid.Row="1" Grid.Column="1" SelectionMode="Single" SelectionChanged="RaceList_SelectionChanged">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=Title_head}" DisplayMemberBinding = "{Binding Title}" Width = "100"/>
+                            <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=Place_head}" DisplayMemberBinding = "{Binding Place}" Width = "100"/>
+                            <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=Date_head}" DisplayMemberBinding = "{Binding Date}" Width = "100"/>
+                            <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=Length_head}" DisplayMemberBinding = "{Binding Length}" Width = "100"/>
+                            <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=Status_head}" DisplayMemberBinding = "{Binding Status}" Width = "100"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Button x:Name="SelectRace" Content= "{Binding Source={StaticResource lang}, Path=choose_race_btn_}" Grid.Column="1" Grid.Row="2" Width="200" Click="SelectRace_Click" Margin="2" Style="{StaticResource Submit}"/>
+            </Grid>
+            <Grid x:Name="race_module" Visibility="Hidden" IsVisibleChanged="Race_module_IsVisibleChanged">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="250" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Grid.ColumnSpan="2">
+                    <TextBlock Margin="10,0,0,0" x:Name="Race_RaceName" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Foreground="{DynamicResource WindowForeground}"/>
+                </Grid>
+                <Grid Grid.Row="1" Margin="10,0,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="1.2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="28" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="28" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="28" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="28" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="28" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="28" />
+                        <RowDefinition Height="10" />
+                    </Grid.RowDefinitions>
+                    <Label Style="{StaticResource DescLabel}" Content="{Binding Source={StaticResource lang}, Path=PlaceOfRace_label_}"  Grid.Row="1"/> 
+                    <Label Style="{StaticResource DescLabel}" Content="{Binding Source={StaticResource lang}, Path=CategoryOfRace_label_}" Grid.Row="3"/>
+                    <Label Style="{StaticResource DescLabel}" Content="{Binding Source={StaticResource lang}, Path=LengthOfRace_label_}"  Grid.Row="5"/>
+                    <!-- <Label Visibility="Hidden" Style="{StaticResource DescLabel}" Content="{Binding Source={StaticResource lang}, Path=MeasComInRace}" Grid.Row="9"/> -->
+                    <Label Style="{StaticResource DescLabel}" Content="{Binding Source={StaticResource lang}, Path=StateOfRace_label_}" Grid.Row="7"/>
+                    <Label Style="{StaticResource DescLabel}" Content="{Binding Source={StaticResource lang}, Path=LapsOfRace_label_}" Grid.Row="9"/>
+
+                    <TextBox Style="{StaticResource DescValue}" IsEnabled="False" x:Name="Place_txt_" Grid.Row="1" Grid.Column="1" GotFocus="CarotSet"/>
+                    <TextBox Style="{StaticResource DescValue}" IsEnabled="False" x:Name="Category_txt_" Grid.Row="3" Grid.Column="1" GotFocus="CarotSet"/>
+                    <TextBox Style="{StaticResource DescValue}" IsEnabled="False" x:Name="Lenght_txt_" Grid.Row="5" Grid.Column="1" GotFocus="CarotSet"/>
+                    <!-- <TextBox Visibility="Hidden" Style="{StaticResource DescValue}" IsEnabled="False" x:Name="MeasComInRace_txt_" Grid.Row="9" Grid.Column="1" GotFocus="CarotSet"/>-->
+                    <TextBox Style="{StaticResource DescValue}" IsEnabled="False" x:Name="State_txt_" Grid.Row="7" Grid.Column="1" GotFocus="CarotSet"/>
+                    <TextBox Style="{StaticResource DescValue}" IsEnabled="False" x:Name="Laps_txt_" Grid.Row="9" Grid.Column="1" GotFocus="CarotSet"/>
+
+                    <Button x:Name="TimekeepingLapData" Click="TimekeepingLapData_Click" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="11" Width="200" Content="{Binding Source={StaticResource lang}, Path=Timekeeping_btn}" Style="{StaticResource Submit}" />
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <Grid Grid.Column="1" Grid.Row="1" Margin="0,0,0,10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="30"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="{Binding Source={StaticResource lang}, Path=racers_lbl}" x:Name="Racers" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="12" Foreground="White" Margin="10,0,0,0"/>
+                        <ListView x:Name="RacersInRace" Grid.Row="1" Background="#FF555555" BorderBrush="#FF3E3E3E" Foreground="White" Margin="5,0">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="{Binding Source={StaticResource lang}, Path=pos_RacerInRace}" DisplayMemberBinding = "{Binding Position}" Width="75"/>
+                                    <GridViewColumn Header="{Binding Source={StaticResource lang}, Path=name_racer_lbl}" DisplayMemberBinding="{Binding FullName}" Width="150"/>
+                                    <GridViewColumn Header="#" DisplayMemberBinding="{Binding StartNumber}" Width="50"/>
+                                    <GridViewColumn Header="{Binding Source={StaticResource lang}, Path=name_team_lbl}" DisplayMemberBinding="{Binding Team}" Width="75"/>
+                                    <GridViewColumn Header="{Binding Source={StaticResource lang}, Path=referencetime_lbl}" DisplayMemberBinding="{Binding RefTime}" Width="75"/>
+                                    <GridViewColumn Header="{Binding Source={StaticResource lang}, Path=time_RacerInRace}" DisplayMemberBinding="{Binding Time}" Width="75"/>
+                                    <GridViewColumn Header="{Binding Source={StaticResource lang}, Path=pentime_RacerInRace}" DisplayMemberBinding="{Binding PenTime}" Width="75"/>
+                                    <GridViewColumn Header="{Binding Source={StaticResource lang}, Path=finaltime_RacerInRace}" DisplayMemberBinding="{Binding FinalTime}" Width="75"/>
+                                    <GridViewColumn Header="{Binding Source={StaticResource lang}, Path=car_RacerInRace}" DisplayMemberBinding="{Binding Car}" Width="75"/>
+                                    <GridViewColumn Header="{Binding Source={StaticResource lang}, Path=StateOfRace_label_}" DisplayMemberBinding="{Binding RacerStatusText}" Width="75"/>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </Grid>
+                </Grid>
+                <Label x:Name="Time_lbl" Grid.Row="2" FontSize="36" Foreground="White" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            </Grid>
+            <Grid x:Name="tournaments_module" Background="#FF555555" Visibility="Hidden">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="350"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="35"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Column="0" Grid.Row="1" Margin="10,0,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="1.6*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Content="{Binding Source={StaticResource lang}, Path=nametour_lbl_}" Style="{StaticResource DescLabel}" Grid.Row="1"/>
+                    <Label Content="{Binding Source={StaticResource lang}, Path=shortname_lbl_}" Style="{StaticResource DescLabel}" Grid.Row="3"/>
+                    <Label Content="{Binding Source={StaticResource lang}, Path=cattour_lbl_}" Style="{StaticResource DescLabel}" Grid.Row="5"/>
+                    <Label Content="{Binding Source={StaticResource lang}, Path=yeartour_lbl_}" Style="{StaticResource DescLabel}" Grid.Row="7"/>
+
+                    <TextBox x:Name="NameOfTourInput" Style="{StaticResource DescValue}" Grid.Column="1" Grid.Row="1"/>
+                    <TextBox x:Name="ShortNameInput" Style="{StaticResource DescValue}" Grid.Column="1" Grid.Row="3"/>
+                    <TextBox x:Name="CategoryInput" Style="{StaticResource DescValue}" Grid.Column="1" Grid.Row="5"/>
+                    <TextBox x:Name="YearInput" Style="{StaticResource DescValue}" Grid.Column="1" Grid.Row="7"/>
+                </Grid>
+                <Grid Grid.Column="1" Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <Label Content="{Binding Source={StaticResource lang}, Path=racestour_lbl_}" x:Name="RacesTour" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="12" Foreground="White" Margin="10,0,0,0"/>
+                    <ListView x:Name="RacesInTour" Grid.Row="1" Background="#FF555555" BorderBrush="#FF3E3E3E" Foreground="White" Margin="5,0">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="{Binding Source={StaticResource lang}, Path=name_race_lbl}" DisplayMemberBinding="{Binding RaceName}" Width="75"/>
+                                <GridViewColumn Header="{Binding Source={StaticResource lang}, Path=date_race_lbl}" DisplayMemberBinding="{Binding Date}" Width="75"/>
+                                <GridViewColumn Header="{Binding Source={StaticResource lang}, Path=place_race_lbl}" DisplayMemberBinding="{Binding Place}" Width="75"/>
+                                <GridViewColumn Header="{Binding Source={StaticResource lang}, Path=state_race_lbl}" DisplayMemberBinding="{Binding StatusText}" Width="75"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+                <Grid Grid.Column="2" Grid.Row="1" Margin="0,0,0,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Content="{Binding Source={StaticResource lang}, Path=racerpostour_lbl_}" x:Name="TimeKeepers" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="12" Foreground="White" Margin="10,0,0,0"/>
+                    <ListView x:Name="RacersInTour" Grid.Row="1" Background="#FF555555" BorderBrush="#FF3E3E3E" Foreground="White" Margin="5,0">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="{Binding Source={StaticResource lang}, Path=pos_tour_lbl}" DisplayMemberBinding="{Binding Position}" Width="20"/>
+                                <GridViewColumn Header="{Binding Source={StaticResource lang}, Path=nameracer_tour_lbl}" Width="50" DisplayMemberBinding="{Binding RacerName}"/>
+                                <GridViewColumn Header="#" Width="20" DisplayMemberBinding="{Binding StartNum}"/>
+                                <GridViewColumn Header="{Binding Source={StaticResource lang}, Path=team_tour_lbl}" DisplayMemberBinding="{Binding RacerTeam}" Width="50"/>
+                                <GridViewColumn Header="{Binding Source={StaticResource lang}, Path=score_tour_lbl}" DisplayMemberBinding="{Binding Points}" Width="20"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+
+            </Grid>
+            <Grid x:Name="TourSelector" Visibility="Hidden">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="500" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="38"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <ListView Background="#FF555555" x:Name="TourList" Grid.Row="1" Grid.Column="1" SelectionMode="Single" SelectionChanged="TourList_SelectionChanged">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=Name_head}" DisplayMemberBinding = "{Binding Name}" Width = "200"/>
+                            <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=ShortName_head}" DisplayMemberBinding = "{Binding Name_Short}" Width = "100"/>
+                            <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=Year_head}" DisplayMemberBinding = "{Binding Year}" Width = "100"/>
+                            <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=Category_head}" DisplayMemberBinding = "{Binding CategoryName}" Width = "100"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Button x:Name="SelectTour" Content= "{Binding Source={StaticResource lang}, Path=choose_race_btn_}" Grid.Column="1" Grid.Row="2" Width="200" Click="SelectTour_Click" Margin="2" Style="{StaticResource Submit}"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,376 @@
+﻿<Window x:Class="Regularity_Rally.Control.Add_new_race"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Regularity_Rally.Control"
+             SizeToContent="WidthAndHeight" ResizeMode="NoResize">
+    <Window.Resources>
+        <local:Add_New_Races_Language x:Key="lang" />
+        <Style x:Key="DescLabel" TargetType="{x:Type Label}">
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="FontFamily" Value="/Regularity_Rally;component/Resources/#Noto Sans Med" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Label}">
+                        <Border CornerRadius="5,0,0,5" BorderThickness="1,1,0,1" BorderBrush="White">
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Text="{TemplateBinding Content}" Margin="0, 0, 5, 0"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="DescValue" TargetType="{x:Type TextBox}">
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="FontFamily" Value="/Regularity_Rally;component/Resources/#Noto Sans Med" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Background" Value="#AAA" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBoxBase}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="White" BorderThickness="1" CornerRadius="0,5,5,0" >
+                            <Grid VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0">
+                                <ScrollViewer x:Name="PART_ContentHost"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="#FF007ACC" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Cursor" Value="Hand" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="Submit" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#FF007ACC"/>
+            <Setter Property="BorderBrush" Value="#FF007ACC"/>
+            <Setter Property="BorderThickness" Value="1px" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontFamily" Value="/Regularity_Rally;component/Resources/#Noto Sans Med" />
+            <Setter Property="FontWeight" Value="Normal" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="5" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Cursor" Value="Hand" />
+                                <Setter Property="Background" Value="#FF3091D3"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="BorderBrush" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" Value="#FF005187"/>
+                                <Setter Property="Foreground" Value="#FF8D8D74" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="{x:Type ListViewItem}">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    <Grid Background="#FF555555" SnapsToDevicePixels="True">
+        <Border BorderThickness="10" BorderBrush="{x:Null}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <!--LEFT-->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="250*"/>
+
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="28"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="28"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="28"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="28"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="28"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="28"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="28"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="28"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="28"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="28"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="28"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="28"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="28"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Style="{StaticResource DescLabel}" Content="{Binding Source={StaticResource lang}, Path=name_race_label}" Grid.Row="1"/>
+                    <Label Style="{StaticResource DescLabel}" Content="{Binding Source={StaticResource lang}, Path=location_race_label}" Grid.Row="3"/>
+                    <Label Style="{StaticResource DescLabel}" Content="{Binding Source={StaticResource lang}, Path=length_race_label_}"  Grid.Row="9"/>
+                    <Label Grid.Column="0" Grid.Row="15" Content="{Binding Source={StaticResource lang}, Path=meascom_race_label_}" Style="{StaticResource DescLabel}" />
+                    <Label Grid.Column="0" Grid.Row="17" Content="{Binding Source={StaticResource lang}, Path=note_race_label_}" Style="{StaticResource DescLabel}" />
+                    <Label Grid.Column="0" Grid.Row="11" Content="{Binding Source={StaticResource lang}, Path=laps_race_label_}" Style="{StaticResource DescLabel}" />
+                    <Label Grid.Column="0" Grid.Row="7" Content="{Binding Source={StaticResource lang}, Path=time_race_label_}" Style="{StaticResource DescLabel}" />
+
+                    <TextBox Style="{StaticResource DescValue}" x:Name="RaceName_txt" Grid.Row="1" Grid.Column="1" GotFocus="CarotSet"/>
+                    <TextBox Style="{StaticResource DescValue}" x:Name="LocationRace_txt" Grid.Row="3" Grid.Column="1" GotFocus="CarotSet"/>
+                    <TextBox Style="{StaticResource DescValue}" x:Name="NumOfLapsRace_txt" Grid.Row="11" Grid.Column="1" GotFocus="CarotSet"/>
+                    <TextBox Style="{StaticResource DescValue}" x:Name="TimeRace_txt"  Grid.Row="7" Grid.Column="1" GotFocus="CarotSet"/>
+                    <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5" Margin="0,0,0,0" Orientation="Horizontal">
+                        <Label Content="{Binding Source={StaticResource lang}, Path=date_race_label_}" Width="150" Style="{StaticResource DescLabel}"/>
+                        <DatePicker x:Name="DateRace" Width="200" Grid.Column="1"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="19" Margin="0,0,0,0" Orientation="Horizontal" >
+                        <Label Content="{Binding Source={StaticResource lang}, Path=state_race_label_}" Style="{StaticResource DescLabel}" Width="150"/>
+                        <ComboBox ItemsSource="{Binding ComboRacersState}" DisplayMemberPath="{Binding StatusText}" x:Name="StateRace" Width="198">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding StatusText}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <ComboBox ItemsSource="{Binding ComboBrandFill}" DisplayMemberPath="{Binding Company}" x:Name="MeasCom" Width="200" Grid.Column="1" Grid.Row="15">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Company}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+
+                    <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="13" Margin="0,0,0,0" Orientation="Horizontal" >
+                        <Label Content="{Binding Source={StaticResource lang}, Path=cat_race_label_}" Style="{StaticResource DescLabel}" Width="150"/>
+                        <ComboBox ItemsSource="{Binding ComboRaceCategory}" DisplayMemberPath="{Binding Name}" x:Name="CatRaceCombo" Width="198">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Name}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+
+
+                    <TextBox Style="{StaticResource DescValue}" x:Name="LegthRace" Grid.Row="9" Grid.Column="1" GotFocus="CarotSet"/>
+                    <TextBox Style="{StaticResource DescValue}" x:Name="NoteRace" Grid.Row="17" Grid.Column="1" GotFocus="CarotSet"/>
+
+                    <Button x:Name="ActionSave" Content= "{Binding Source={StaticResource lang}, Path=save_race_btn_}" Width="215" Grid.ColumnSpan="2" Grid.Row="21" Click="ActionSave_Click" Style="{StaticResource Submit}"/>
+                    <Button x:Name="ActionDelete" Content= "{Binding Source={StaticResource lang}, Path=delete_race_btn_}" Width="215" Grid.ColumnSpan="2" Grid.Row="23" Click="ActionDelete_Click" Style="{StaticResource Submit}"/>
+                    <Button x:Name="ActionCancel" Content="{Binding Source={StaticResource lang}, Path=cancel_race_btn_}" Width="215" Grid.ColumnSpan="2" Grid.Row="25" Click="ActionCancel_Click" Style="{StaticResource Submit}"/>
+                </Grid>
+                <!--CENTER-->
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="8*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <ListView x:Name="RacersInRaceList" MouseDoubleClick="RacersInRaceList_MouseDoubleClick" Grid.Row="1" Height="auto" Background="#FF555555" SelectionMode="Single" SelectionChanged="RacersInRaceList_SelectionChanged" >
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=start_num_header}" DisplayMemberBinding = "{Binding Start_num}"/>
+                                <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=First_nameRacer_head}" DisplayMemberBinding =  "{Binding First_Name}"/>
+                                <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=Last_nameRacer_head}" DisplayMemberBinding =  "{Binding Last_Name}"/>
+                                <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=team_racer_header}" DisplayMemberBinding =  "{Binding Team_name}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Button x:Name="AddRacer" Content= "{Binding Source={StaticResource lang}, Path=add_racer_btn_}" Height="28" Grid.Row="2" Width="120" HorizontalAlignment="Left" Margin="10,0,0,0" Click="AddRacer_Click" Style="{StaticResource Submit}"/>
+                    <Button x:Name="RemoveRacer" Content= "{Binding Source={StaticResource lang}, Path=delete_racer_btn_}" Height="28" Grid.Row="2" Width="120" HorizontalAlignment="Right" Margin="0,0,10,0" Click="RemoveRacer_Click" Style="{StaticResource Submit}"/>
+                </Grid>
+                <!--RIGHT-->
+                <Grid Grid.Column="4">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="8*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Content="{Binding Source={StaticResource lang}, Path=timekeepers_lbl}" x:Name="TimeKeepers" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="12" Foreground="White" Margin="10,0,0,0"/>
+                    <ListView x:Name="TimeKeepersInRace" SelectionChanged="TimeKeepersInRace_SelectionChanged" MouseDoubleClick="TimeKeepersInRace_MouseDoubleClick" Grid.Row="1" Background="#FF555555" BorderBrush="#FF3E3E3E" Foreground="White" Margin="5,0">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="{Binding Source={StaticResource lang}, Path=name_timekeep_lbl}" DisplayMemberBinding="{Binding User}" Width="100"/>
+                                <GridViewColumn Header="{Binding Source={StaticResource lang}, Path=place_timekeep_lbl}" DisplayMemberBinding="{Binding Position}" Width="100"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Button x:Name="AddTimeKeeper" Content= "{Binding Source={StaticResource lang}, Path=add_timekeeper_btn_}" Height="28" Grid.Row="2" Width="120" HorizontalAlignment="Left" Margin="10,0,0,0" Click="AddTimeKeeper_Click" Style="{StaticResource Submit}"/>
+                    <Button x:Name="RemoveTimeKeeper" Content= "{Binding Source={StaticResource lang}, Path=delete_timekeeper_btn_}" Height="28" Grid.Row="2" Width="120" HorizontalAlignment="Right" Margin="0,0,10,0" Click="RemoveTimeKeeper_Click" Style="{StaticResource Submit}"/>
+                </Grid>
+            </Grid>
+        </Border>
+        <!--RACER SELECT-->
+        <Border x:Name="RacerSelect" BorderThickness="10" BorderBrush="{x:Null}" Visibility="Hidden">
+            <Grid Background="#FF555555" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="10"/>
+                </Grid.RowDefinitions>
+                <ListView x:Name="AddRacerInRaceList" Grid.Row="1" Grid.Column="3" SelectionMode="Single" SelectionChanged="AddRacerInRaceList_SelectionChanged" Background="#FF555555" Margin="10">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=First_nameRacer_head}" DisplayMemberBinding = "{Binding First_name}" Width = "100"/>
+                            <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=Last_nameRacer_head}" DisplayMemberBinding = "{Binding Last_name}" Width = "100"/>
+                            <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=Short_nameRacer_head}" DisplayMemberBinding = "{Binding Short_name}" Width = "100"/>
+                            <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=BornRacer_head}" DisplayMemberBinding = "{Binding Born}" Width = "100"/>
+                            <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=NationalityRacer_head}" DisplayMemberBinding = "{Binding Nationality}" Width = "100"/>
+                            <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=MailRacer_head}" DisplayMemberBinding = "{Binding Mail}" Width = "100"/>
+                            <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=TeamRacer_head}" DisplayMemberBinding = "{Binding Team}" Width = "100"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="28"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="28"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="28"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="28"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="28"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="28"/>
+                        <RowDefinition Height="10"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Style="{StaticResource DescLabel}" Content="{Binding Source={StaticResource lang}, Path=start_num_header}"  Grid.Column="0" Grid.Row="0"/>
+                    <Label Style="{StaticResource DescLabel}" Content="{Binding Source={StaticResource lang}, Path=CarSelectRacer_label_}" Grid.Column="0" Grid.Row="2"/>
+                    <Label Style="{StaticResource DescLabel}" Content="{Binding Source={StaticResource lang}, Path=StatusSelectRacer_label_}" Grid.Column="0" Grid.Row="4"/>
+                    <Label Style="{StaticResource DescLabel}" Content="{Binding Source={StaticResource lang}, Path=RefTimeSelectRacer_label_}" Width="100" Grid.Column="0" Grid.Row="6"/>
+
+                    <TextBox Style="{StaticResource DescValue}" x:Name="RacerStartNum_txt_" GotFocus="CarotSet" Grid.Column="1" Grid.Row="0" />
+                    <ComboBox ItemsSource="{Binding Combo}" DisplayMemberPath="{Binding CarFull}" x:Name="Car_Combo" Grid.Column="1" Grid.Row="2">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding CarFull}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                    <ComboBox ItemsSource="{Binding ComboRacerStatus}" DisplayMemberPath="{Binding StatusText}" x:Name="RacerStatus_Combo" Grid.Column="1" Grid.Row="4">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding StatusText}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                    <TextBox Style="{StaticResource DescValue}" x:Name="ReferenceTime_txt_" GotFocus="CarotSet" Grid.Column="1" Grid.Row="6" />
+                </Grid>
+
+                <Button x:Name="AddRacerToRace" Content= "{Binding Source={StaticResource lang}, Path=add_racer_btn_}" Width="120" Grid.Column="3" HorizontalAlignment="Right" Grid.Row="3" Margin="0,0,150,0" Click="AddRacerToRace_Click" Style="{StaticResource Submit}"/>
+                <Button x:Name="CloseRacerToRace" Content= "{Binding Source={StaticResource lang}, Path=cancel_race_btn_}" Width="120" Grid.Column="3" HorizontalAlignment="Right" Grid.Row="3" Margin="0,0,10,0" Click="CloseRacerToRace_Click" Style="{StaticResource Submit}"/>
+            </Grid>
+        </Border>
+        <!--TIMEKEEPER SELECT-->
+        <Border x:Name="TimekeeperSelect" BorderThickness="10" Visibility="Hidden" BorderBrush="{x:Null}">
+            <Grid Background="#FF555555">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="28"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="28"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="28"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="28"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="38"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="38"/>
+                        <RowDefinition Height="10"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Style="{StaticResource DescLabel}" Content="{Binding Source={StaticResource lang}, Path=LoginTimekeeper_head}" Grid.Row="1"/>
+                    <Label Style="{StaticResource DescLabel}" Content="{Binding Source={StaticResource lang}, Path=First_nameTimekeeper_head}" Grid.Row="3"/>
+                    <Label Style="{StaticResource DescLabel}" Content="{Binding Source={StaticResource lang}, Path=Last_nameTimekeeper_head}" Grid.Row="5"/>
+                    <Label Style="{StaticResource DescLabel}" Content="{Binding Source={StaticResource lang}, Path=Position_label_}" Grid.Row="7"/>
+                   
+                    <TextBox Style="{StaticResource DescValue}" x:Name="LoginTimeKeeper" Grid.Row="1" Grid.Column="1" GotFocus="CarotSet"/>
+                    <TextBox Style="{StaticResource DescValue}" x:Name="FirstnameKeeper" Grid.Row="3" Grid.Column="1" GotFocus="CarotSet"/>
+                    <TextBox Style="{StaticResource DescValue}" x:Name="LastnameTimekeeper" Grid.Row="5" Grid.Column="1" GotFocus="CarotSet"/>
+                    <TextBox Style="{StaticResource DescValue}" x:Name="Position" Grid.Row="7" Grid.Column="1" GotFocus="CarotSet"/>
+
+                    <Button x:Name="AddTimeKeeperToRace" Content= "{Binding Source={StaticResource lang}, Path=add_timekeeper_btn_}" Width="200" HorizontalAlignment="Center" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,10,0" Click="AddTimeKeeperToRace_Click" Style="{StaticResource Submit}"/>
+                    <Button x:Name="CloseTimeKeeperToRace" Content= "{Binding Source={StaticResource lang}, Path=cancel_race_btn_}" Width="200" HorizontalAlignment="Center" Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,10,0" Click="CloseTimeKeeperToRace_Click" Style="{StaticResource Submit}"/>
+
+                </Grid>
+                <Grid Grid.Column="1">
+                <ListView x:Name="AddTimekeeperInRaceList" SelectionChanged="AddTimekeeperInRaceList_SelectionChanged" Background="#FF555555" Margin="10">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=LoginTimekeeper_head}" DisplayMemberBinding = "{Binding Login}" Width = "100"/>
+                            <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=First_nameTimekeeper_head}" DisplayMemberBinding = "{Binding Name}" Width = "100"/>
+                            <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=Last_nameTimekeeper_head}" DisplayMemberBinding = "{Binding Lastname}" Width = "100"/>
+                            <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=RoleTimekeeper_head}" DisplayMemberBinding = "{Binding Role}" Width = "100"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                </Grid>
+            </Grid>
+        </Border>
+            
+    </Grid>
+</Window>
+

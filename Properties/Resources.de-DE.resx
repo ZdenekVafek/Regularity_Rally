@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="adc_assignpoints_category_btn" xml:space="preserve">
+    <value>Zuorden Wertung</value>
+  </data>
+  <data name="adc_brands_title" xml:space="preserve">
+    <value>Marke</value>
+  </data>
+  <data name="adc_cancel_category_btn_" xml:space="preserve">
+    <value>Abchließen</value>
+  </data>
+  <data name="adc_cancel_com_btn_" xml:space="preserve">
+    <value>Abschließen</value>
+  </data>
+  <data name="adc_cat_title" xml:space="preserve">
+    <value>Kategorie</value>
+  </data>
+  <data name="adc_coef_cut_points_racerscategory_label" xml:space="preserve">
+    <value>Koeffitient</value>
+  </data>
+  <data name="adc_delete_category_btn" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="adc_min_racerscategory_label" xml:space="preserve">
+    <value>Grenze</value>
+  </data>
+  <data name="adc_name_category_label" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="adc_place_category_label" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="adc_points_category_label" xml:space="preserve">
+    <value>Wertung</value>
+  </data>
+  <data name="adc_save_category_btn" xml:space="preserve">
+    <value>Sparen</value>
+  </data>
+  <data name="ancar_cancel_car_btn_" xml:space="preserve">
+    <value>Abschlißen</value>
+  </data>
+  <data name="ancar_car_title" xml:space="preserve">
+    <value>Neues Auto</value>
+  </data>
+  <data name="ancar_delete_car_btn_" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="ancar_delete_team_btn_" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="ancar_email_team_label_" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="ancar_model_car_label_" xml:space="preserve">
+    <value>Modell</value>
+  </data>
+  <data name="ancar_name_car_label_" xml:space="preserve">
+    <value>Hersteller</value>
+  </data>
+  <data name="ancar_name_team_label_" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ancar_save_car_btn_" xml:space="preserve">
+    <value>Sparen</value>
+  </data>
+  <data name="ancar_save_team_btn_" xml:space="preserve">
+    <value>Sparen</value>
+  </data>
+  <data name="ancar_short_team_label_" xml:space="preserve">
+    <value>Kurzer Name</value>
+  </data>
+  <data name="ancar_team_title" xml:space="preserve">
+    <value>Team</value>
+  </data>
+  <data name="ancar_vin_car_label_" xml:space="preserve">
+    <value>VIN</value>
+  </data>
+  <data name="ancar_year_car_label_" xml:space="preserve">
+    <value>Jahr</value>
+  </data>
+  <data name="anm_Address_com_label_" xml:space="preserve">
+    <value>Adresse</value>
+  </data>
+  <data name="anm_delete_com_btn" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="anm_email_com_label" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="anm_name_com_label" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="anm_save_com_btn" xml:space="preserve">
+    <value>Sparen</value>
+  </data>
+  <data name="anm_tel_com_label_" xml:space="preserve">
+    <value>Telefon</value>
+  </data>
+  <data name="anm_web_com_label" xml:space="preserve">
+    <value>Web</value>
+  </data>
+  <data name="car_addcar_btn_" xml:space="preserve">
+    <value>Neues Auto</value>
+  </data>
+  <data name="car_brandcar_head" xml:space="preserve">
+    <value>Hersteller</value>
+  </data>
+  <data name="car_closecar_btn_" xml:space="preserve">
+    <value>abschließen</value>
+  </data>
+  <data name="car_closecat_btn_" xml:space="preserve">
+    <value>abschließen</value>
+  </data>
+  <data name="car_model_head" xml:space="preserve">
+    <value>Modell</value>
+  </data>
+  <data name="car_vin_head" xml:space="preserve">
+    <value>VIN</value>
+  </data>
+  <data name="car_year_head" xml:space="preserve">
+    <value>Jahr</value>
+  </data>
+  <data name="category_addcat_btn_" xml:space="preserve">
+    <value>Neue Kategorie</value>
+  </data>
+  <data name="category_coefcategory_head" xml:space="preserve">
+    <value>Koeffizient</value>
+  </data>
+  <data name="category_limitcategory_head" xml:space="preserve">
+    <value>Limit</value>
+  </data>
+  <data name="category_namecategory_head" xml:space="preserve">
+    <value>Kategorien</value>
+  </data>
+  <data name="category_points_head" xml:space="preserve">
+    <value>Wertung</value>
+  </data>
+  <data name="category_positionpoints_head" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="measurerbrand_addbrand_btn_" xml:space="preserve">
+    <value>Neue Unternehmen</value>
+  </data>
+  <data name="measurerbrand_Address_head" xml:space="preserve">
+    <value>Adresse</value>
+  </data>
+  <data name="measurerbrand_brand_head" xml:space="preserve">
+    <value>Unternehmen</value>
+  </data>
+  <data name="measurerbrand_closebrand_btn_" xml:space="preserve">
+    <value>abschließen</value>
+  </data>
+  <data name="measurerbrand_Email_head" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="measurerbrand_Telephone_head" xml:space="preserve">
+    <value>Telefon</value>
+  </data>
+  <data name="measurerbrand_Web_head" xml:space="preserve">
+    <value>Web</value>
+  </data>
+  <data name="racer_addracers_btn_" xml:space="preserve">
+    <value>Neue Rennfahrer</value>
+  </data>
+  <data name="racer_AddressRacer_head" xml:space="preserve">
+    <value>Adresse</value>
+  </data>
+  <data name="racer_BornRacer_head" xml:space="preserve">
+    <value>Geboren</value>
+  </data>
+  <data name="racer_cancel_racer_btn_" xml:space="preserve">
+    <value>Abschließen</value>
+  </data>
+  <data name="racer_closeracers_btn_" xml:space="preserve">
+    <value>Abschließen</value>
+  </data>
+  <data name="racer_delete_racer_btn_" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="racer_First_nameRacer_head" xml:space="preserve">
+    <value>Vorname</value>
+  </data>
+  <data name="racer_GenderRacer_head" xml:space="preserve">
+    <value>Geschlecht</value>
+  </data>
+  <data name="racer_Last_nameRacer_head" xml:space="preserve">
+    <value>Nachname</value>
+  </data>
+  <data name="racer_MailRacer_head" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="racer_NationalityRacer_head" xml:space="preserve">
+    <value>Staatsangehörigkeit</value>
+  </data>
+  <data name="racer_save_racer_btn_" xml:space="preserve">
+    <value>Sparen</value>
+  </data>
+  <data name="racer_Short_nameRacer_head" xml:space="preserve">
+    <value>Initialen</value>
+  </data>
+  <data name="racer_TeamRacer_head" xml:space="preserve">
+    <value>Team</value>
+  </data>
+  <data name="racer_TelRacer_head" xml:space="preserve">
+    <value>Telefon</value>
+  </data>
+  <data name="team_addteam_btn_" xml:space="preserve">
+    <value>Neue Team</value>
+  </data>
+  <data name="team_closeteam_btn_" xml:space="preserve">
+    <value>abschließen</value>
+  </data>
+  <data name="team_email_head" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="team_shortname_head" xml:space="preserve">
+    <value>kurzer Name</value>
+  </data>
+  <data name="team_teamname_head" xml:space="preserve">
+    <value>Team</value>
+  </data>
+  <data name="user_active_head" xml:space="preserve">
+    <value>Aktiv</value>
+  </data>
+  <data name="user_adduser_btn_" xml:space="preserve">
+    <value>Neue Anmeldung</value>
+  </data>
+  <data name="user_closeuser_btn_" xml:space="preserve">
+    <value>abschließen</value>
+  </data>
+  <data name="user_email_head" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="user_lastname_head" xml:space="preserve">
+    <value>Nachname</value>
+  </data>
+  <data name="user_login_head" xml:space="preserve">
+    <value>Anmeldung</value>
+  </data>
+  <data name="user_name_head" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="user_newpass_user_label" xml:space="preserve">
+    <value>Passwort</value>
+  </data>
+  <data name="user_role_head" xml:space="preserve">
+    <value>Rolle</value>
+  </data>
+  <data name="user_save_user_btn" xml:space="preserve">
+    <value>Sparen</value>
+  </data>
+  <data name="user_active" xml:space="preserve">
+    <value>Aktiv</value>
+  </data>
+  <data name="lw_connectdbs_btn" xml:space="preserve">
+    <value>Verbindung zur Datenbank herstellen</value>
+  </data>
+  <data name="lw_login_btn" xml:space="preserve">
+    <value>anmelden</value>
+  </data>
+  <data name="lw_login_label" xml:space="preserve">
+    <value>Anmeldung</value>
+  </data>
+  <data name="lw_password_label" xml:space="preserve">
+    <value>Passwort</value>
+  </data>
+  <data name="pw_connectdbs_btn_" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pw_connectdbs_label_" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pw_keep_label_" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pw_password_label_" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pw_port_label_" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pw_serverdb_label_" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pw_user_label_" xml:space="preserve">
+    <value />
+  </data>
+</root>

@@ -1,0 +1,170 @@
+﻿<Window x:Class="Regularity_Rally.Control.Add_new_Meascom"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Regularity_Rally.Control"
+             mc:Ignorable="d" 
+             Height="380"
+             ResizeMode="NoResize">
+    <Window.Resources>
+        <local:Add_New_Meascom_Language x:Key="lang" />
+        <Style x:Key="DescLabel" TargetType="{x:Type Label}">
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="FontFamily" Value="/Regularity_Rally;component/Resources/#Noto Sans Med" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Label}">
+                        <Border CornerRadius="5,0,0,5" BorderThickness="1,1,0,1" BorderBrush="White">
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Text="{TemplateBinding Content}" Margin="0, 0, 5, 0"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="DescValue" TargetType="{x:Type TextBox}">
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="FontFamily" Value="/Regularity_Rally;component/Resources/#Noto Sans Med" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Background" Value="#AAA" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBoxBase}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="White" BorderThickness="1" CornerRadius="0,5,5,0" >
+                            <Grid VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0">
+                                <ScrollViewer x:Name="PART_ContentHost"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="#FF007ACC" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Cursor" Value="Hand" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="Submit" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#FF007ACC"/>
+            <Setter Property="BorderBrush" Value="#FF007ACC"/>
+            <Setter Property="BorderThickness" Value="1px" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontFamily" Value="/Regularity_Rally;component/Resources/#Noto Sans Med" />
+            <Setter Property="FontWeight" Value="Normal" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="5" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Cursor" Value="Hand" />
+                                <Setter Property="Background" Value="#FF3091D3"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="BorderBrush" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" Value="#FF005187"/>
+                                <Setter Property="Foreground" Value="#FF8D8D74" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="{x:Type ListViewItem}">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    <Grid Background="#FF555555">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1.75*"/>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="28"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="28"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="28"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="28"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="28"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="28"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="28"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="28"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Style="{StaticResource DescLabel}" Content="{Binding Source={StaticResource lang}, Path=name_com_label_}" Grid.Row="1"/>
+            <Label Style="{StaticResource DescLabel}" Content="{Binding Source={StaticResource lang}, Path=address_com_label_}" Grid.Row="3"/>
+            <Label Style="{StaticResource DescLabel}" Content="{Binding Source={StaticResource lang}, Path=tel_com_label_}"  Grid.Row="5"/>
+            <Label Style="{StaticResource DescLabel}" Content="{Binding Source={StaticResource lang}, Path=email_com_label_}"  Grid.Row="7"/>
+            <Label Style="{StaticResource DescLabel}" Content="{Binding Source={StaticResource lang}, Path=web_com_label_}"  Grid.Row="9"/>
+
+            <TextBox Style="{StaticResource DescValue}" x:Name="CompanyName" Grid.Row="1" Grid.Column="1" GotFocus="CarotSet"/>
+            <TextBox Style="{StaticResource DescValue}" x:Name="Addresss" Grid.Row="3" Grid.Column="1" GotFocus="CarotSet" />
+            <TextBox Style="{StaticResource DescValue}" x:Name="TelNumber" Grid.Row="5" Grid.Column="1" GotFocus="CarotSet" />
+            <TextBox Style="{StaticResource DescValue}" x:Name="Email" Grid.Row="7" Grid.Column="1" GotFocus="CarotSet" />
+            <TextBox Style="{StaticResource DescValue}" x:Name="WebAddress" Grid.Row="9" Grid.Column="1" GotFocus="CarotSet"/>
+
+            <Button x:Name="ActionSave" Content= "{Binding Source={StaticResource lang}, Path=save_com_btn_}" Width="235" Margin="50,0" Grid.ColumnSpan="2" Grid.Row="11" Click="ActionSave_Click" Style="{StaticResource Submit}"/>
+            <Button x:Name="ActionDelete" Content= "{Binding Source={StaticResource lang}, Path=delete_com_btn_}" Width="235" Margin="50,0" Grid.ColumnSpan="2" Grid.Row="13" Click="ActionDelete_Click" Style="{StaticResource Submit}"/>
+            <Button x:Name="ActionClose" Content="{Binding Source={StaticResource lang}, Path=cancel_com_btn_}" Width="235" Margin="50,0" Grid.ColumnSpan="2" Grid.Row="15" Click="ActionClose_Click" Style="{StaticResource Submit}"/>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="38"/>
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+
+            <ListView x:Name="UsersInBrand" Background="#FF555555" Height="Auto" Grid.RowSpan="9" SelectionChanged="UsersInBrand_SelectionChanged" SelectionMode="Single" >
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=login_head}" DisplayMemberBinding = "{Binding Login}" Width = "100"/>
+                        <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=name_head}" DisplayMemberBinding = "{Binding Name}" Width = "100"/>
+                        <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=lastname_head}" DisplayMemberBinding = "{Binding Lastname}" Width = "100"/>
+                        <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=email_head}" DisplayMemberBinding = "{Binding E_mail}" Width = "100"/>
+                        <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=role_head}" DisplayMemberBinding = "{Binding Role}" Width = "100"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Button x:Name="AddUserToBrand" Content= "{Binding Source={StaticResource lang}, Path=AddUserToBrand}" Width="200" Margin="10,0,0,0" HorizontalAlignment="Left" Grid.Row="3" Click="AddUserToBrand_Click" Style="{StaticResource Submit}"/>
+            <Button x:Name="DeleteUserFromBrand" Content= "{Binding Source={StaticResource lang}, Path=RemUserToBrand}" Width="200" Margin="0,0,10,0" Grid.Row="3" HorizontalAlignment="Right" Click="DeleteUserFromBrand_Click" Style="{StaticResource Submit}"/>
+        </Grid>
+    </Grid>
+</Window>

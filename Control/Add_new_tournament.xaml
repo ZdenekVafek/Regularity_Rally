@@ -1,0 +1,214 @@
+﻿<Window x:Class="Regularity_Rally.Control.Add_new_tournament"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Regularity_Rally.Control"
+             mc:Ignorable="d" 
+             Height="400"  Width="950">
+    <Window.Resources>
+        <local:AddNewTournament_Language x:Key="lang" />
+        <Style x:Key="DescLabel" TargetType="{x:Type Label}">
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="FontFamily" Value="/Regularity_Rally;component/Resources/#Noto Sans Med" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Label}">
+                        <Border CornerRadius="5,0,0,5" BorderThickness="1,1,0,1" BorderBrush="White">
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Text="{TemplateBinding Content}" Margin="0, 0, 5, 0"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="DescValue" TargetType="{x:Type TextBox}">
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="FontFamily" Value="/Regularity_Rally;component/Resources/#Noto Sans Med" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Background" Value="#AAA" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBoxBase}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="White" BorderThickness="1" CornerRadius="0,5,5,0" >
+                            <Grid VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0">
+                                <ScrollViewer x:Name="PART_ContentHost"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="#FF007ACC" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Cursor" Value="Hand" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="Submit" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#FF007ACC"/>
+            <Setter Property="BorderBrush" Value="#FF007ACC"/>
+            <Setter Property="BorderThickness" Value="1px" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontFamily" Value="/Regularity_Rally;component/Resources/#Noto Sans Med" />
+            <Setter Property="FontWeight" Value="Normal" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="5" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Cursor" Value="Hand" />
+                                <Setter Property="Background" Value="#FF3091D3"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="BorderBrush" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" Value="#FF005187"/>
+                                <Setter Property="Foreground" Value="#FF8D8D74" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="{x:Type ListViewItem}">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    <Grid Background="#FF555555">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="280"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1.75*"/>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="28"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="28"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="28"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="28"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="28"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="28"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="28"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Style="{StaticResource DescLabel}" Content="{Binding Source={StaticResource lang}, Path=nametour_lbl_}" Grid.Row="1"/>
+            <Label Style="{StaticResource DescLabel}" Content="{Binding Source={StaticResource lang}, Path=shortname_lbl_}" Grid.Row="3"/>
+            <!--Label Style="{StaticResource DescLabel}" Content="{Binding Source={StaticResource lang}, Path=cattour_lbl_}"  Grid.Row="5"/-->
+            <!--Label Style="{StaticResource DescLabel}" Content="{Binding Source={StaticResource lang}, Path=numofracestour_lbl_}"  Grid.Row="7"/-->
+            <!--Label Style="{StaticResource DescLabel}" Content="{Binding Source={StaticResource lang}, Path=numofracerstour_lbl_}"  Grid.Row="9"/-->
+            <Label Style="{StaticResource DescLabel}" Content="{Binding Source={StaticResource lang}, Path=yeartour_lbl_}"  Grid.Row="5"/>
+
+            <TextBox Style="{StaticResource DescValue}" x:Name="NameOfTour" Grid.Row="1" Grid.Column="1" GotFocus="CarotSet"/>
+            <TextBox Style="{StaticResource DescValue}" x:Name="ShortName" Grid.Row="3" Grid.Column="1" GotFocus="CarotSet"/>
+            <!--TextBox Style="{StaticResource DescValue}" x:Name="Category" Grid.Row="5" Grid.Column="1" GotFocus="CarotSet"/-->
+
+            <!--TextBox Style="{StaticResource DescValue}" x:Name="NumOfRaces" Grid.Row="7" Grid.Column="1" GotFocus="CarotSet"/-->
+            <!--TextBox Style="{StaticResource DescValue}" x:Name="NumOfRacers" Grid.Row="9" Grid.Column="1" GotFocus="CarotSet"/-->
+            <TextBox Style="{StaticResource DescValue}" x:Name="Year" Grid.Row="5" Grid.Column="1" GotFocus="CarotSet"/>
+
+            <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="7" Margin="0,0,0,0" Orientation="Horizontal" >
+                <Label Content="{Binding Source={StaticResource lang}, Path=cat_race_label_}" Style="{StaticResource DescLabel}" Width="100"/>
+                <ComboBox ItemsSource="{Binding ComboRaceCategory}" DisplayMemberPath="{Binding Name}" x:Name="CatRaceCombo" Width="180">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Name}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </StackPanel>
+
+
+
+            <Button x:Name="ActionSave" Content= "{Binding Source={StaticResource lang}, Path=save_lbl_}" Width="210"  Grid.ColumnSpan="2" Grid.Row="9" Click="ActionSave_Click" Style="{StaticResource Submit}"/>
+            <Button x:Name="ActionDelete" Content= "{Binding Source={StaticResource lang}, Path=delete_lbl_}" Width="210"  Grid.ColumnSpan="2" Grid.Row="11" Click="ActionDelete_Click" Style="{StaticResource Submit}"/>
+            <Button x:Name="ActionClose" Content="{Binding Source={StaticResource lang}, Path=cancel_lbl}" Width="210"  Grid.ColumnSpan="2" Grid.Row="13" Click="ActionClose_Click" Style="{StaticResource Submit}"/>
+
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ListView x:Name="RacesInTourList" Grid.Row="1" Height="auto" Background="#FF555555" SelectionMode="Single" SelectionChanged="RacesInTourList_SelectionChanged" >
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=nametour_header}" DisplayMemberBinding = "{Binding RaceName}" Width="100"/>
+                        <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=datetour_header}" DisplayMemberBinding =  "{Binding Date}" Width="100"/>
+                        <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=placetour_header}" DisplayMemberBinding =  "{Binding Place}" Width="100"/>
+                        <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=lenghttour_header}" DisplayMemberBinding =  "{Binding Length}" Width="100"/>
+                        <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=timetour_header}" DisplayMemberBinding =  "{Binding Time}" Width="100"/>
+                        <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=numoflapstour_header}" DisplayMemberBinding =  "{Binding NumOfLaps}" Width="100"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Button x:Name="AddRace" Content= "{Binding Source={StaticResource lang}, Path=add_race_btn_}" Height="28" Grid.Row="2" Width="120" HorizontalAlignment="Left" Margin="10,0,0,0" Click="AddRace_Click" Style="{StaticResource Submit}"/>
+            <Button x:Name="RemoveRace" Content= "{Binding Source={StaticResource lang}, Path=delete_race_btn_}" Height="28" Grid.Row="2" Width="120" HorizontalAlignment="Right" Margin="0,0,10,0" Click="RemoveRace_Click" Style="{StaticResource Submit}"/>
+        </Grid>
+        <Border Grid.ColumnSpan="5" Grid.RowSpan="4" x:Name="RaceSelectionToTournament" BorderThickness="10" Visibility="Hidden" BorderBrush="{x:Null}">
+            <Grid Background="#FF555555">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="38"/>
+                    <RowDefinition Height="10"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+                <ListView x:Name="RacesToTourList" Grid.Row="1" Grid.Column="1" Height="auto" Background="#FF555555" SelectionMode="Single" SelectionChanged="RacesToTourList_SelectionChanged" >
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=nametour_header}" DisplayMemberBinding = "{Binding RaceName}" Width="150"/>
+                            <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=datetour_header}" DisplayMemberBinding =  "{Binding Date}" Width="100"/>
+                            <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=placetour_header}" DisplayMemberBinding =  "{Binding Place}" Width="100"/>
+                            <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=lenghttour_header}" DisplayMemberBinding =  "{Binding Length}" Width="100"/>
+                            <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=timetour_header}" DisplayMemberBinding =  "{Binding Time}" Width="100"/>
+                            <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=numoflapstour_header}" DisplayMemberBinding =  "{Binding NumOfLaps}" Width="100"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Button x:Name="AddRaceToTour" Content= "{Binding Source={StaticResource lang}, Path=add_race_btn_}" Height="28" Grid.Row="3" Grid.Column="1" Width="120" HorizontalAlignment="Left" Margin="10,0,0,0" Click="AddRaceToTour_Click" Style="{StaticResource Submit}"/>
+                <Button x:Name="CloseRaceToTour" Content= "{Binding Source={StaticResource lang}, Path=cancel_lbl}" Height="28" Grid.Column="1" Grid.Row="3" Width="120" HorizontalAlignment="Right" Margin="10,0,0,0" Click="CloseRaceToTour_Click" Style="{StaticResource Submit}"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

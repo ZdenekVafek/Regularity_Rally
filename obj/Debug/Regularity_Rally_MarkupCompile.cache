@@ -1,0 +1,20 @@
+﻿Regularity_Rally
+
+
+exe
+C#
+.cs
+G:\Bachelors thesis\Bachelors thesis\Regularity_Rally\Regularity_Rally\obj\Debug\
+Regularity_Rally
+none
+false
+DEBUG;TRACE
+
+31-55784322
+11064158406
+432058386671
+1301038887471
+Control\Add_new_car.xaml;Control\Add_new_Category.xaml;Control\Add_new_Meascom.xaml;Control\Add_new_race.xaml;Control\Add_new_racer.xaml;Control\Add_new_team.xaml;Control\Add_new_tournament.xaml;Control\Add_new_user.xaml;Control\Add_points_to_Category.xaml;Control\Add_UserToBrand.xaml;Control\Cars.xaml;Control\Category.xaml;Control\CirclProgress.xaml;Control\ClockDisplay.xaml;Control\DetailRacerReporter.xaml;Control\DeviceForm.xaml;Control\Homescreen.xaml;Control\LoginWindow.xaml;Control\MainWindow.xaml;Control\Measurer_Brands.xaml;Control\Paddock.xaml;Control\PortalWindow.xaml;Control\Racers.xaml;Control\Races.xaml;Control\Reporter_MainWindow.xaml;Control\Teams.xaml;Control\TimeCollection.xaml;Control\Timekeeping.xaml;Control\TourDetailReporter.xaml;Control\Tournaments.xaml;Control\Users.xaml;
+
+True
+

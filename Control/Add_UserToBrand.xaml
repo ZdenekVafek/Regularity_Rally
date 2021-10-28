@@ -1,0 +1,107 @@
+﻿<Window x:Class="Regularity_Rally.Control.Add_UserToBrand"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Regularity_Rally.Control"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Window.Resources>
+        <local:User_Language x:Key="lang" />
+        <Style x:Key="Submit" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#FF007ACC"/>
+            <Setter Property="BorderBrush" Value="#FF007ACC"/>
+            <Setter Property="BorderThickness" Value="1px" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontFamily" Value="/Regularity_Rally;component/Resources/#Noto Sans Med" />
+            <Setter Property="FontWeight" Value="Normal" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="5" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Cursor" Value="Hand" />
+                                <Setter Property="Background" Value="#FF3091D3"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="BorderBrush" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" Value="#FF005187"/>
+                                <Setter Property="Foreground" Value="#FF8D8D74" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="MenuActiveItem" Color="#FFF"/>
+        <SolidColorBrush x:Key="MenuPasiveItem" Color="#AAA"/>
+        <Style x:Key="ItemLabel" TargetType="{x:Type Label}">
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="FontFamily" Value="/Regularity_Rally;component/Resources/#Noto Sans Med" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Foreground" Value="{StaticResource MenuPasiveItem}" />
+            <Setter Property="Margin" Value="5,0,5,3"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Label}">
+                        <Grid>
+                            <TextBlock Text="{TemplateBinding Content}" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="{x:Type ListViewItem}">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    <Grid Background="#FF555555">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="NameCars" Grid.Row="1" Grid.Column="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="45"/>
+            </Grid.RowDefinitions>
+
+            <ListView Background="#FF555555" x:Name="UserList" SelectionChanged="UserList_SelectionChanged" Margin="0,10,10,10">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=login_head}" DisplayMemberBinding = "{Binding Login}" Width = "100"/>
+                        <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=name_head}" DisplayMemberBinding = "{Binding Name}" Width = "100"/>
+                        <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=lastname_head}" DisplayMemberBinding = "{Binding Lastname}" Width = "100"/>
+                        <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=email_head}" DisplayMemberBinding = "{Binding E_mail}" Width = "100"/>
+                        <GridViewColumn Header = "{Binding Source={StaticResource lang}, Path=role_head}" DisplayMemberBinding = "{Binding Role}" Width = "100"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Button x:Name="AddUser_btn" Content="{Binding Source={StaticResource lang}, Path=adduser_btn_}" Style="{StaticResource Submit}" Margin="10,5,0,0" HorizontalAlignment="Left" Grid.Row="1" Grid.ColumnSpan="3" Width="120" Height="30" Click="AddUser_btn_Click"/>
+            <Button x:Name="CloseSelectUser" Content="{Binding Source={StaticResource lang}, Path=closeuser_btn_}" Style="{StaticResource Submit}" Margin="10,5,0,0" HorizontalAlignment="Right" Grid.Row="1" Grid.ColumnSpan="3" Width="120" Height="30" Click="CloseSelectUser_Click"/>
+        </Grid>
+
+    </Grid>
+</Window>
